@@ -1,4 +1,4 @@
-phonegapbuild-receivve-send-intents
+phonegapbuild-receive-send-intents
 ===================================
 
 PhoneGap Build Plugin to enable app to receive SEND intents
