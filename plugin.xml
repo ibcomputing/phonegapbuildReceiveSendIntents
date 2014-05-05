@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="uk.co.ibcomputing.phonegapbuild.plugins.receivesendintents"
+        version="0.1.0">
+
+  <name>Receive Send Intents</name>
+
+  <description>
+    PhoneGap Build Plugin to enable app to receive SEND intents.
+    This plugin adds lines to the AndroidManifest.xml file so that the app gets registered to respond to "SEND" intents from other apps.
+  </description>
+
+  <license>MIT</license>
+
+  <engines>
+    <engine name="cordova" version=">=3.3.0"/>
+  </engines>
+
+  <!-- android -->
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="ReceiveSendIntents">
+        <param name="android-package" value="nl.xservices.plugins.ReceiveSendIntents"/>
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/*/application/activity">
+      <intent-filter>
+        <action android:name="android.intent.action.SEND" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <data android:mimeType="text/plain" />
+      </intent-filter>
+    </config-file>
+  </platform>
+
+</plugin>
