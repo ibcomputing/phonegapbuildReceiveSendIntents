@@ -12,6 +12,8 @@
   </description>
 
   <license>MIT</license>
+  
+  <preference name="LAUNCHMODE" />
 
   <engines>
     <engine name="cordova" version=">=3.3.0"/>
@@ -27,7 +29,7 @@
     </config-file>
 
     <config-file target="AndroidManifest.xml" parent="/*/application">
-      <activity android:launchMode="singleTop">
+      <activity android:name=".SendActivity" android:launchMode="$LAUNCHMODE" android:clearTaskOnLaunch="true">
         <intent-filter>
           <action android:name="android.intent.action.SEND" />
           <category android:name="android.intent.category.DEFAULT" />
