@@ -26,13 +26,16 @@
       </feature>
     </config-file>
 
-    <config-file target="AndroidManifest.xml" parent="/*/application/activity">
-      <intent-filter>
-        <action android:name="android.intent.action.SEND" />
-        <category android:name="android.intent.category.DEFAULT" />
-        <data android:mimeType="text/plain" />
-      </intent-filter>
+    <config-file target="AndroidManifest.xml" parent="/*/application">
+      <activity android:launchMode="singleTop">
+        <intent-filter>
+          <action android:name="android.intent.action.SEND" />
+          <category android:name="android.intent.category.DEFAULT" />
+          <data android:mimeType="text/plain" />
+        </intent-filter>
+      </activity>
     </config-file>
+    
   </platform>
 
 </plugin>
